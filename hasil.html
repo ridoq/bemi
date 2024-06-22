@@ -152,7 +152,7 @@
           class="row d-flex flex-column text-center justify-content-center align-items-center"
         >
           <h3 data-aos="fade-down" data-aos-delay="50" data-aos-duration="1000">
-            Hallo <span style="color: #ffc107" id="namaa"></span>👋
+            Halo <span style="color: #ffc107" id="namaa"></span>👋
           </h3>
           <p
             data-aos="fade-right"
@@ -252,14 +252,15 @@
                   class="bmi-container justify-content-between position-relative d-flex flex-column align-items-center"
                   style="height: 100%"
                 >
-                  <h2 class="mb-4 text-start">Body Mass Index (BMI)</h2>
+                  <h2 class=" text-start">Body Mass Index (BMI)</h2>
                   <div
                     class="bmiOutput d-flex flex-column justify-content-end align-items-center"
                     style="width: 90%"
                   >
-                    <div
-                      class="bmi-display mb-4 d-flex justify-content-between align-items-center"
-                    >
+                  <div
+                  class="bmi-display mb-4 d-flex  align-items-center"
+                  >
+                  <img src="" id="ilustrasi" />
                       <span
                         id="bmi-value"
                         data-aos="fade-right"
@@ -303,7 +304,7 @@
             data-aos-delay="1300"
             data-aos-duration="500"
           >
-            <img src="" id="ilustrasi" />
+            <img src="" id="ilustrasi2" />
           </div>
         </div>
       </div>
@@ -336,6 +337,7 @@
       const bmiValue = document.getElementById("bmi-value");
       const bmiStatus = document.getElementById("bmi-status");
       const ilustrasi = document.getElementById("ilustrasi");
+      const ilustrasi2 = document.getElementById("ilustrasi2");
 
       // Mengisi konten elemen dengan id "tbOutput" dan "bbOutput"
       tbOutput.textContent = userData.height + " cm";
@@ -349,21 +351,26 @@
       bmiValue.textContent = bmi.toFixed(1);
 
       if (bmi < 18.5) {
-        bmiStatus.textContent = "Underweight";
+        bmiStatus.textContent = "Kekurangan Berat Badan";
         bmiStatus.style.backgroundColor = "#b3d5f0";
+        bmiStatus.style.color = "#222222";
         ilustrasi.src = "../assets/img/kurus.png";
+        ilustrasi2.src = "../assets/img/kurus.png";
       } else if (bmi >= 18.5 && bmi <= 24.9) {
-        bmiStatus.textContent = "You're Healthy";
+        bmiStatus.textContent = "Ideal";
         bmiStatus.style.backgroundColor = "#8bc34a";
         ilustrasi.src = "../assets/img/ideal.png";
+        ilustrasi2.src = "../assets/img/ideal.png";
       } else if (bmi >= 25 && bmi <= 29.9) {
-        bmiStatus.textContent = "Overweight";
+        bmiStatus.textContent = "Kelebihan Berat Badan";
         bmiStatus.style.backgroundColor = "#ff9800";
         ilustrasi.src = "../assets/img/gemuk.png";
+        ilustrasi2.src = "../assets/img/gemuk.png";
       } else {
-        bmiStatus.textContent = "Obese";
+        bmiStatus.textContent = "Obesitas";
         bmiStatus.style.backgroundColor = "#f44336";
         ilustrasi.src = "../assets/img/obese.png";
+        ilustrasi2.src = "../assets/img/obese.png";
       }
     </script>
   </body>
