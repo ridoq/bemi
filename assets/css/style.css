@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Della+Respira&family=Italiana&family=Lora:ital,wght@0,400..700;1,400..700&family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Yeseva+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+/* Untuk Webkit Browsers */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: black;
+  background: rgb(67, 66, 66);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(31.6px);
+  -webkit-backdrop-filter: blur(11.6px);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #777777;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ced4d7;
+}
+
+/* Untuk Firefox Browsers */
+::-moz-scrollbar {
+  width: 10px;
+}
+
+::-moz-scrollbar-track {
+  background-color: black;
+}
+
+::-moz-scrollbar-thumb {
+  background-color: #777777;
+  border-radius: 5px;
+}
+
+::-moz-scrollbar-thumb:hover {
+  background-color: #ced4d7;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #292929;
+}
+a {
+  text-decoration: none;
+}
+
+.texture{
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.retangle{
+  background-color: #252525;
+  height: 500px;
+  width: 500px;
+  position: absolute;
+  z-index: -1;
+}
+.retangle:nth-child(3){
+  rotate: 135deg;
+  top: -14%;
+  left: -5%;
+  
+}
+.retangle:nth-child(4){
+  rotate: 190deg;
+  bottom: -14%;
+  right: 1%;
+
+}
+.round{
+  background-color: #222222;
+  height: 500px;
+  width: 500px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+}
+
+.round:nth-child(1){
+  bottom: -35%;
+  right: 25%;
+  
+}
+.round:nth-child(2){
+  top: -14%;
+  left: 14%;
+
+}
+
+#home{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+#home .container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+#home .container h1{
+  color: #CED4D7;
+  font-family: 'Inter';
+  font-weight: 800;
+  font-size: 50px;
+}
+#home .container h1 span{
+  font-family: 'Della Respira';
+  font-weight: 800;
+  font-size: 50px;
+  color: #f8debd;
+}
+#home .container .shadow1{
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255,255,255,.02);
+  border-radius: 10px;
+}
+#home .container .shadow2{
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255,255,255,.02);
+  border-radius: 10px;
+}
+#home .container form{
+  padding: 30px;
+  display: flex;
+  height: fit-content;
+  margin: 0;
+  background-color: #efefef;
+  border-radius: 10px;
+}
+#home .container form input{
+  height: fit-content;
+  padding: 8px 0px 8px 20px;
+  border-radius: 5px;
+}
+.plus {
+  display: inline-block;
+  animation: puter 12s infinite linear;
+}
+.bounch {
+  display: inline-block;
+  animation: bounce 4s ease-in-out;
+  animation-delay: 4s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-20px);
+  }
+  30% {
+    transform: translateY(0px);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+  150% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes puter {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
