@@ -252,15 +252,13 @@
                   class="bmi-container justify-content-between position-relative d-flex flex-column align-items-center"
                   style="height: 100%"
                 >
-                  <h2 class=" text-start">Body Mass Index (BMI)</h2>
+                  <h2 class="text-start">Body Mass Index (BMI)</h2>
                   <div
                     class="bmiOutput d-flex flex-column justify-content-end align-items-center"
                     style="width: 90%"
                   >
-                  <div
-                  class="bmi-display mb-4 d-flex  align-items-center"
-                  >
-                  <img src="" id="ilustrasi" />
+                    <div class="bmi-display mb-4 d-flex align-items-center">
+                      <img src="" id="ilustrasi" />
                       <span
                         id="bmi-value"
                         data-aos="fade-right"
@@ -309,9 +307,23 @@
         </div>
       </div>
     </section>
-    <footer style="height: 10vh;flex-direction: column;align-items: center;justify-content: end; margin-top: 20px;text-align: center;font-family: 'Inter';">
-      <h3 style="color: #ced4d7;font-size: 15px;margin: 0">All Right Reserved | <span style="color: #ffc107;">Ridok</span></h3>
-      <p style="color: #ced4d7;font-size: 8px;margin: 0px 0px 15px 0px">nantikan fitur fitur baru yang akan ditambahkan</p>
+    <footer
+      style="
+        height: 10vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
+        margin-top: 20px;
+        text-align: center;
+        font-family: 'Inter';
+      "
+    >
+      <h3 style="color: #ced4d7; font-size: 15px; margin: 0">
+        All Right Reserved | <span style="color: #ffc107">Ridok</span>
+      </h3>
+      <p style="color: #ced4d7; font-size: 8px; margin: 0px 0px 15px 0px">
+        nantikan fitur fitur baru yang akan ditambahkan
+      </p>
     </footer>
     <!--JS-->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -326,8 +338,9 @@
     <script src="assets/js/vanilla-tilt.min.js"></script>
     <script src="assets/js/script.js"></script>
     <script>
+      // hasil.html
+
       const userData = JSON.parse(localStorage.getItem("userData"));
-      // Mengisi konten elemen dengan id "namaa"
       const namaElement = document.getElementById("namaa");
       namaElement.textContent = userData.name;
 
@@ -339,38 +352,59 @@
       const ilustrasi = document.getElementById("ilustrasi");
       const ilustrasi2 = document.getElementById("ilustrasi2");
 
-      // Mengisi konten elemen dengan id "tbOutput" dan "bbOutput"
       tbOutput.textContent = userData.height + " cm";
       bbOutput.textContent = userData.weight + " kg";
 
-      // Menghitung BMI dan mengisi nilai slider
       const bmi = userData.weight / Math.pow(userData.height / 100, 2);
       bmiSlider.value = bmi.toFixed(1);
-
-      // Mengubah status BMI, warna latar belakang, dan gambar ilustrasi
       bmiValue.textContent = bmi.toFixed(1);
 
-      if (bmi < 18.5) {
-        bmiStatus.textContent = "Kekurangan Berat Badan";
-        bmiStatus.style.backgroundColor = "#b3d5f0";
-        bmiStatus.style.color = "#222222";
-        ilustrasi.src = "../assets/img/kurus.png";
-        ilustrasi2.src = "../assets/img/kurus.png";
-      } else if (bmi >= 18.5 && bmi <= 24.9) {
-        bmiStatus.textContent = "Ideal";
-        bmiStatus.style.backgroundColor = "#8bc34a";
-        ilustrasi.src = "../assets/img/ideal.png";
-        ilustrasi2.src = "../assets/img/ideal.png";
-      } else if (bmi >= 25 && bmi <= 29.9) {
-        bmiStatus.textContent = "Kelebihan Berat Badan";
-        bmiStatus.style.backgroundColor = "#ff9800";
-        ilustrasi.src = "../assets/img/gemuk.png";
-        ilustrasi2.src = "../assets/img/gemuk.png";
+      if (userData.gender === "Perempuan") {
+        if (bmi < 18.5) {
+          bmiStatus.textContent = "Kekurangan Berat Badan";
+          bmiStatus.style.backgroundColor = "#b3d5f0";
+          bmiStatus.style.color = "#222222";
+          ilustrasi.src = "../assets/img/fkurus.png";
+          ilustrasi2.src = "../assets/img/fkurus.png";
+        } else if (bmi >= 18.5 && bmi <= 24.9) {
+          bmiStatus.textContent = "Ideal";
+          bmiStatus.style.backgroundColor = "#8bc34a";
+          ilustrasi.src = "../assets/img/fideal.png";
+          ilustrasi2.src = "../assets/img/fideal.png";
+        } else if (bmi >= 25 && bmi <= 29.9) {
+          bmiStatus.textContent = "Kelebihan Berat Badan";
+          bmiStatus.style.backgroundColor = "#ff9800";
+          ilustrasi.src = "../assets/img/fgemuk.png";
+          ilustrasi2.src = "../assets/img/fgemuk.png";
+        } else {
+          bmiStatus.textContent = "Obesitas";
+          bmiStatus.style.backgroundColor = "#f44336";
+          ilustrasi.src = "../assets/img/fobese.png";
+          ilustrasi2.src = "../assets/img/fobese.png";
+        }
       } else {
-        bmiStatus.textContent = "Obesitas";
-        bmiStatus.style.backgroundColor = "#f44336";
-        ilustrasi.src = "../assets/img/obese.png";
-        ilustrasi2.src = "../assets/img/obese.png";
+        if (bmi < 18.5) {
+          bmiStatus.textContent = "Kekurangan Berat Badan";
+          bmiStatus.style.backgroundColor = "#b3d5f0";
+          bmiStatus.style.color = "#222222";
+          ilustrasi.src = "../assets/img/kurus.png";
+          ilustrasi2.src = "../assets/img/kurus.png";
+        } else if (bmi >= 18.5 && bmi <= 24.9) {
+          bmiStatus.textContent = "Ideal";
+          bmiStatus.style.backgroundColor = "#8bc34a";
+          ilustrasi.src = "../assets/img/ideal.png";
+          ilustrasi2.src = "../assets/img/ideal.png";
+        } else if (bmi >= 25 && bmi <= 29.9) {
+          bmiStatus.textContent = "Kelebihan Berat Badan";
+          bmiStatus.style.backgroundColor = "#ff9800";
+          ilustrasi.src = "../assets/img/gemuk.png";
+          ilustrasi2.src = "../assets/img/gemuk.png";
+        } else {
+          bmiStatus.textContent = "Obesitas";
+          bmiStatus.style.backgroundColor = "#f44336";
+          ilustrasi.src = "../assets/img/obese.png";
+          ilustrasi2.src = "../assets/img/obese.png";
+        }
       }
     </script>
   </body>

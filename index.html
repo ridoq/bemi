@@ -88,41 +88,51 @@
     <section id="home">
       <div class="container">
         <h1 data-aos='flip-left' data-aos-delay='500' data-aos-duration='1500'>B<span class="bounch">e</span>MI <span class="plus">+</span></h1>
-        <div class="col-sm-6" data-aos='fade-up' data-aos-delay='1000' data-aos-duration='1000'>
+        <div class="col-12 col-lg-7" data-aos='fade-up' data-aos-delay='1000' data-aos-duration='1000'>
           <div class="shadow1">
             <div class="shadow2">
               <form class="row gy-4 gx-2">
-                <h3 class="text-center" style="font-family: 'Inter';font-size: 18px; font-weight: 300;">BMI Kalkulator</h3>
                 <div class="col-md-12">
+                  <label class="form-label">Nama</label>
                   <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Nama Anda"
+                  type="text"
+                  class="form-control"
+                  name="nama"
+                  required
                   />
                 </div>
+                <div class="col-md-12">
+                  <label class="form-label">Jenis Kelamin</label>
+                  <select name="gender" id="" class="form-select" required>
+                    <option hidden></option>
+                    <option value="Laki-laki">Laki-laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                  </select>
+                </div>
                 <div class="col-md-6">
+                  <label class="form-label">Tinggi Badan</label>
                   <div class="input-group mb-3">
                     <input
                     type="text"
                     class="form-control"
-                    placeholder="Tinggi Badan"
+                    name="tinggi"
                     aria-describedby="basic-addon1"
                     />
                     <span class="input-group-text" id="basic-addon1">cm</span>
                   </div>
                 </div>
                 <div class="col-md-6">
+                  <label class="form-label">Berat Badan</label>
                   <div class="input-group mb-3">
                     <input
                     type="text"
                     class="form-control"
-                    placeholder="Berat Badan"
+                    name="berat"
                     aria-describedby="basic-addon1"
                     />
                     <span class="input-group-text" id="basic-addon1">kg</span>
                   </div>
                 </div>
-                <div class="col-md-12">
                   <button type="submit" class="btn btn-warning w-100">
                     Hitung!
                   </button>
@@ -153,12 +163,14 @@ function handleFormSubmit(event) {
     event.preventDefault(); // Mencegah reload halaman
   
     // Mendapatkan nilai dari input field
-    const nameInput = document.querySelector('.form-control[placeholder="Nama Anda"]');
-    const heightInput = document.querySelector('.form-control[placeholder="Tinggi Badan"]');
-    const weightInput = document.querySelector('.form-control[placeholder="Berat Badan"]');
+    const nameInput = document.querySelector('.form-control[name="nama"]');
+    const genderInput = document.querySelector('.form-select[name="gender"]');
+    const heightInput = document.querySelector('.form-control[name="tinggi"]');
+    const weightInput = document.querySelector('.form-control[name="berat"]');
   
     const userData = {
       name: nameInput.value,
+      gender: genderInput.value,
       height: heightInput.value,
       weight: weightInput.value
     };
